@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Tasks</title>
+    <!-- <link rel="stylesheet" href="src/input.css"> -->
+    <link rel="stylesheet" href="./src/output.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 p-5">
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded shadow">
+        <h2 class="text-2xl font-bold mb-4">📅 Today's Tasks</h2>
+
+        <!-- Back to My Tasks -->
+        <a href="sidebar.html" class="block text-center bg-blue-500 text-white py-2 rounded mb-4">
+            🔙 Back to My Tasks
+        </a>
+
+        <h2 class="text-xl font-bold mt-6">📋 Tasks for Today</h2>
+        <ul id="todayTaskList" class="mt-4 bg-gray-50 p-4 rounded shadow"></ul>
+    </div>
+
+    <script src="my-task.js"></script>
+</body>
+</html>

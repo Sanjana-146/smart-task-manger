@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+     <link rel="stylesheet" href="src/input.css">
+     <link rel="stylesheet" href="./src/output.css">
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Task Dashboard</title>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100">
+
+    <!-- Top Navbar -->
+    <nav class="bg-gray-900 text-white p-4 flex justify-end">
+        <div id="profileIcon" class="relative cursor-pointer" onclick="toggleProfileDropdown()">
+            <img src="image/logo2.jpg" alt="User" class="rounded-full w-10 h-10">
+            <ul id="profileDropdown" class="hidden absolute right-0 mt-2 w-40 bg-white text-black rounded-lg shadow-md">
+                <li class="p-2 hover:bg-gray-200 cursor-pointer">My Profile</li>
+                <li class="p-2 hover:bg-gray-200 cursor-pointer">Logout</li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="flex flex-1">
+
+        <!-- ✅ Sidebar -->
+        <div class="w-64 bg-gray-900 text-white min-h-screen p-5 fixed">
+            <h2 class="text-2xl font-bold mb-6 text-center">Dashboard</h2>
+            <ul class="space-y-4">
+                <li class="cursor-pointer bg-gray-800 p-3 rounded-lg hover:bg-gray-700 transition duration-300">
+                    <a href="./calender.html" class="block">➕ Add New Task</a>
+                </li>
+                <li id="myTasks" class="cursor-pointer bg-gray-800 p-3 rounded-lg hover:bg-gray-700 transition duration-300 relative" onclick="toggleDropdown()">
+                    📋 My Tasks
+                    <ul id="taskDropdown" class="hidden bg-gray-800 text-white mt-2 rounded-lg shadow-md absolute w-full left-0">
+                        <li class="p-2 hover:bg-gray-700 cursor-pointer"><a href="./my-task.html">📌 Today's Tasks</a></li>
+                        <li class="p-2 hover:bg-gray-700 cursor-pointer"><a href="#">🕒 Previous Tasks</a></li>
+                    </ul>
+                </li>
+                <li id="analytics" class="cursor-pointer bg-gray-800 p-3 rounded-lg hover:bg-gray-700 transition duration-300">
+                    📊 Analytics
+                </li>
+            </ul>
+        </div>
+
+        <!-- ✅ Main Content -->
+        <div class="flex-1 p-5 ml-64">
+            <h1 class="text-3xl font-bold">Welcome to Your Task Dashboard</h1>
+            <p class="mt-3 text-gray-600">Manage and track your tasks easily.</p>
+        </div>
+    </div>
+
+    <script src="sidebar.js"></script>
+</body>
+</html>

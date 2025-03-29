@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>eCommerce Authentication</title>
+    <script>
+        function toggleForm() {
+            document.getElementById('login-form').classList.toggle('hidden');
+            document.getElementById('signup-form').classList.toggle('hidden');
+        }
+    </script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white flex rounded-lg shadow-lg overflow-hidden w-11/12 max-w-4xl">
+        <div class="hidden lg:block w-1/2 bg-cover" style="background-image: url('./images/form-img.jpeg');">
+            <div class="flex items-center justify-center h-full bg-black bg-opacity-30">
+                <h1 class="text-white text-xl font-bold">#Welcome</h1>
+            </div>
+        </div>
+        <div class="w-full lg:w-1/2 p-8">
+            <!-- Login Form -->
+            <div id="login-form">
+                <h2 class="text-2xl font-bold mb-6">Login</h2>
+                <form id="authFormLogin">
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="login-email">Email Address</label>
+                        <input type="email" id="login-email" class="w-full p-2 border border-gray-300 rounded" autocomplete="email" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="login-password">Password</label>
+                        <input type="password" id="login-password" class="w-full p-2 border border-gray-300 rounded" autocomplete="current-password" required>
+                    </div>
+                    <div class="mt-7 flex flex-col gap-y-5">
+                        <button type="submit" class="active:scale-[.98] transition-all py-3 rounded-xl bg-blue-600 text-white text-lg font-semibold">Login</button>
+                    </div>
+                </form>
+                <p class="mt-4 text-gray-600">Don't have an account? <a href="#" class="text-blue-600 hover:underline" onclick="toggleForm()">Register here</a></p>
+            </div>
+
+            <!-- Register Form -->
+            <div id="signup-form" class="hidden">
+                <h2 class="text-2xl font-bold mb-6">Registration Form</h2>
+                <form id="authForm">
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="name">First Name</label>
+                        <input type="text" id="name" class="w-full p-2 border border-gray-300 rounded" required>
+                        <p id="name-error" class="text-red-500"></p>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="phone">Phone Number</label>
+                        <input type="text" id="phone" class="w-full p-2 border border-gray-300 rounded" required>
+                        <p id="phone-error" class="text-red-500"></p>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="signup-email">Email Address</label>
+                        <input type="email" id="signup-email" class="w-full p-2 border border-gray-300 rounded" autocomplete="email" required>
+                        <p id="email-error" class="text-red-500"></p>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="new-password">Password</label>
+                        <div class="relative">
+                            <input type="password" id="new-password" class="w-full p-2 border border-gray-300 rounded" autocomplete="new-password" required>
+                            <span class="absolute right-3 top-3 cursor-pointer" id="toggle-password">👁️</span>
+                        </div>
+                        <p id="password-error" class="text-red-500"></p>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700" for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" class="w-full p-2 border border-gray-300 rounded" required>
+                        <p id="confirm-password-error" class="text-red-500"></p>
+                    </div>
+                    <button type="submit" class="w-full bg-black text-white py-2 rounded hover:bg-gray-800">Register</button>
+                </form>
+                <p class="mt-4 text-gray-600">Already have an account? <a href="#" class="text-blue-600 hover:underline" onclick="toggleForm()">Login here</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html>
